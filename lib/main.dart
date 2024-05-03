@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:coffeeshop_uts/pages/dashboard.dart';
+import 'package:coffeeshop_uts/pages/home.dart';
+import 'package:coffeeshop_uts/pages/home1.dart';
 
 void main() {
   runApp(const MyApp());
