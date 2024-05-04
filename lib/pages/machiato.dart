@@ -3,7 +3,7 @@ import 'dart:ui';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-class Home extends StatelessWidget {
+class MachiatoPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return 
@@ -204,6 +204,35 @@ class Home extends StatelessWidget {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Expanded(
+                          child: GestureDetector(
+                            onTap: () {
+                              // Navigasi ke halaman Cappuccino saat teks diklik
+                              Navigator.pushNamed(context, '/home');
+                            },
+                            child: Container(
+                              margin: EdgeInsets.fromLTRB(0, 0, 8, 0),
+                              child: Container(
+                                decoration: BoxDecoration(
+                                  color: Color(0xFFFFFFFF),
+                                  borderRadius: BorderRadius.circular(12),
+                                ),
+                                child: Container(
+                                  padding: EdgeInsets.fromLTRB(16, 10, 16.9, 10),
+                                  child: Text(
+                                    'Cappucino',
+                                    style: GoogleFonts.getFont(
+                                      'Sora',
+                                      fontWeight: FontWeight.w400,
+                                      fontSize: 14,
+                                      color: Color(0xFF2F4B4E),
+                                    ),
+                                  ),
+                                ),
+                              ),
+                            ),
+                          ),
+                        ),
+                        Expanded(
                           child: Container(
                             margin: EdgeInsets.fromLTRB(0, 0, 8, 0),
                             child: Container(
@@ -214,33 +243,13 @@ class Home extends StatelessWidget {
                               child: Container(
                                 padding: EdgeInsets.fromLTRB(16, 10, 16.9, 10),
                                 child: Text(
-                                  'Cappuccino',
+                                  'Machiato',
                                   style: GoogleFonts.getFont(
                                     'Sora',
                                     fontWeight: FontWeight.w600,
                                     fontSize: 14,
                                     color: Color(0xFFFFFFFF),
                                   ),
-                                ),
-                              ),
-                            ),
-                          ),
-                        ),
-                        Expanded(
-                          child: GestureDetector(
-                            onTap: () {
-                              // Navigasi ke halaman Machiato saat teks diklik
-                              Navigator.pushNamed(context, '/machiato');
-                            },
-                            child: Container(
-                              padding: EdgeInsets.fromLTRB(16, 10, 16.9, 10),
-                              child: Text(
-                                'Machiato',
-                                style: GoogleFonts.getFont(
-                                  'Sora',
-                                  fontWeight: FontWeight.w400,
-                                  fontSize: 14,
-                                  color: Color(0xFF2F4B4E),
                                 ),
                               ),
                             ),
@@ -304,7 +313,6 @@ class Home extends StatelessWidget {
                       ],
                     ),
                   ),
-
                   Container(
                     margin: EdgeInsets.fromLTRB(20, 0, 20, 20),
                     child: Align(

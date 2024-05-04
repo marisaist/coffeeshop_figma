@@ -3,7 +3,7 @@ import 'dart:ui';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-class Home extends StatelessWidget {
+class LattePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return 
@@ -204,22 +204,28 @@ class Home extends StatelessWidget {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Expanded(
-                          child: Container(
-                            margin: EdgeInsets.fromLTRB(0, 0, 8, 0),
+                          child: GestureDetector(
+                            onTap: () {
+                              // Navigasi ke halaman Cappuccino saat teks diklik
+                              Navigator.pushNamed(context, '/home');
+                            },
                             child: Container(
-                              decoration: BoxDecoration(
-                                color: Color(0xFFC67C4E),
-                                borderRadius: BorderRadius.circular(12),
-                              ),
+                              margin: EdgeInsets.fromLTRB(0, 0, 8, 0),
                               child: Container(
-                                padding: EdgeInsets.fromLTRB(16, 10, 16.9, 10),
-                                child: Text(
-                                  'Cappuccino',
-                                  style: GoogleFonts.getFont(
-                                    'Sora',
-                                    fontWeight: FontWeight.w600,
-                                    fontSize: 14,
-                                    color: Color(0xFFFFFFFF),
+                                decoration: BoxDecoration(
+                                  color: Color(0xFFFFFFFF),
+                                  borderRadius: BorderRadius.circular(12),
+                                ),
+                                child: Container(
+                                  padding: EdgeInsets.fromLTRB(16, 10, 16.9, 10),
+                                  child: Text(
+                                    'Cappucino',
+                                    style: GoogleFonts.getFont(
+                                      'Sora',
+                                      fontWeight: FontWeight.w400,
+                                      fontSize: 14,
+                                      color: Color(0xFF2F4B4E),
+                                    ),
                                   ),
                                 ),
                               ),
@@ -247,28 +253,22 @@ class Home extends StatelessWidget {
                           ),
                         ),
                         Expanded(
-                          child: GestureDetector(
-                            onTap: () {
-                              // Navigasi ke halaman Latte saat teks diklik
-                              Navigator.pushNamed(context, '/latte');
-                            },
+                          child: Container(
+                            margin: EdgeInsets.fromLTRB(0, 0, 8, 0),
                             child: Container(
-                              margin: EdgeInsets.fromLTRB(0, 0, 8, 0),
+                              decoration: BoxDecoration(
+                                color: Color(0xFFC67C4E),
+                                borderRadius: BorderRadius.circular(12),
+                              ),
                               child: Container(
-                                decoration: BoxDecoration(
-                                  color: Color(0xFFFFFFFF),
-                                  borderRadius: BorderRadius.circular(12),
-                                ),
-                                child: Container(
-                                  padding: EdgeInsets.fromLTRB(16, 10, 16.9, 10),
-                                  child: Text(
-                                    'Latte',
-                                    style: GoogleFonts.getFont(
-                                      'Sora',
-                                      fontWeight: FontWeight.w400,
-                                      fontSize: 14,
-                                      color: Color(0xFF2F4B4E),
-                                    ),
+                                padding: EdgeInsets.fromLTRB(16, 10, 16.9, 10),
+                                child: Text(
+                                  'Latte',
+                                  style: GoogleFonts.getFont(
+                                    'Sora',
+                                    fontWeight: FontWeight.w600,
+                                    fontSize: 14,
+                                    color: Color(0xFFFFFFFF),
                                   ),
                                 ),
                               ),
@@ -304,7 +304,6 @@ class Home extends StatelessWidget {
                       ],
                     ),
                   ),
-
                   Container(
                     margin: EdgeInsets.fromLTRB(20, 0, 20, 20),
                     child: Align(

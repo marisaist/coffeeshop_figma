@@ -2,6 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:coffeeshop_uts/pages/dashboard.dart';
 import 'package:coffeeshop_uts/pages/home.dart';
 import 'package:coffeeshop_uts/pages/home1.dart';
+import 'package:coffeeshop_uts/pages/machiato.dart';
+import 'package:coffeeshop_uts/pages/latte.dart';
+import 'package:coffeeshop_uts/pages/americano.dart';
 
 void main() {
   runApp(const MyApp());
@@ -35,7 +38,13 @@ class MyApp extends StatelessWidget {
         useMaterial3: true,
       ),
       debugShowCheckedModeBanner: false,
-      home:  Dashboard(),
+      home:  Home(),
+      routes: {
+        '/home': (context) => Home(),
+        '/machiato': (context) => MachiatoPage(), // tambahkan rute untuk halaman Machiato
+        '/latte': (context) => LattePage(), // tambahkan rute untuk halaman Latte
+        '/americano': (context) => AmericanoPage(), // tambahkan rute untuk halaman Americano
+      },
     );
   }
 }
