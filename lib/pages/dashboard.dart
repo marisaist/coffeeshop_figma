@@ -2,8 +2,9 @@ import 'package:flutter/material.dart';
 import 'dart:ui';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:coffeeshop_uts/pages/home.dart';
 
-class dashboard extends StatelessWidget {
+class Dashboard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return 
@@ -174,22 +175,31 @@ class dashboard extends StatelessWidget {
                 ),
               ),
             ),
-            Container(
-              margin: EdgeInsets.fromLTRB(20, 0, 20, 0),
+            GestureDetector(
+              onTap: () {
+                // Navigasi ke halaman Home saat tombol "Get Started" ditekan
+                Navigator.push(
+                  context,   
+                  MaterialPageRoute(builder: (context) => Home()),
+                );
+              },
               child: Container(
-                decoration: BoxDecoration(
-                  color: Color(0xFFE27D19),
-                  borderRadius: BorderRadius.circular(30),
-                ),
+                margin: EdgeInsets.fromLTRB(20, 0, 20, 0),
                 child: Container(
-                  padding: EdgeInsets.fromLTRB(0, 15, 0.6, 15),
-                  child: Text(
-                    'Get Started',
-                    style: GoogleFonts.getFont(
-                      'Sora',
-                      fontWeight: FontWeight.w600,
-                      fontSize: 16,
-                      color: Color(0xFFFFFFFF),
+                  decoration: BoxDecoration(
+                    color: Color(0xFFE27D19),
+                    borderRadius: BorderRadius.circular(30),
+                  ),
+                  child: Container(
+                    padding: EdgeInsets.fromLTRB(0, 15, 0.6, 15),
+                    child: Text(
+                      'Get Started',
+                      style: GoogleFonts.getFont(
+                        'Sora',
+                        fontWeight: FontWeight.w600,
+                        fontSize: 16,
+                        color: Color(0xFFFFFFFF),
+                      ),
                     ),
                   ),
                 ),
