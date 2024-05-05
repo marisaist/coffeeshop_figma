@@ -3,7 +3,13 @@ import 'dart:ui';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-class Home1 extends StatelessWidget {
+class Menu extends StatefulWidget {
+  @override
+  _MenuState createState() => _MenuState();
+}
+
+class _MenuState extends State<Menu> {
+  String selectedSize = 'S'; // Variabel global
   @override
   Widget build(BuildContext context) {
     return 
@@ -334,68 +340,92 @@ class Home1 extends StatelessWidget {
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
                               Expanded(
-                                child: Container(
-                                  margin: EdgeInsets.fromLTRB(0, 0, 23.5, 0),
-                                  decoration: BoxDecoration(
-                                    border: Border.all(color: Color(0xFFDEDEDE)),
-                                    borderRadius: BorderRadius.circular(12),
-                                    color: Color(0xFFFFFFFF),
-                                  ),
+                                child: GestureDetector(
+                                  onTap: () {
+                                    // Ubah warna latar belakang menjadi coklat saat ukuran "S" diklik
+                                    setState(() {
+                                      selectedSize = 'S';
+                                    });
+                                  },
                                   child: Container(
-                                    padding: EdgeInsets.fromLTRB(0, 9, 0.4, 9),
-                                    child: Text(
-                                      'S',
-                                      style: GoogleFonts.getFont(
-                                        'Sora',
-                                        fontWeight: FontWeight.w400,
-                                        fontSize: 14,
-                                        height: 1.6,
-                                        color: Color(0xFF2F2D2C),
+                                    margin: EdgeInsets.fromLTRB(0, 0, 23.5, 0),
+                                    decoration: BoxDecoration(
+                                      border: Border.all(color: Color(0xFFDEDEDE)),
+                                      borderRadius: BorderRadius.circular(12),
+                                      color: selectedSize == 'S' ? Color(0xFFE27D19) : Color(0xFFFFFFFF),
+                                    ),
+                                    child: Container(
+                                      padding: EdgeInsets.fromLTRB(0, 9, 0.4, 9),
+                                      child: Text(
+                                        'S',
+                                        style: GoogleFonts.getFont(
+                                          'Sora',
+                                          fontWeight: FontWeight.w400,
+                                          fontSize: 14,
+                                          height: 1.6,
+                                          color: selectedSize == 'S' ? Color(0xFFFFFFFF) : Color(0xFF2F2D2C),
+                                        ),
                                       ),
                                     ),
                                   ),
                                 ),
                               ),
                               Expanded(
-                                child: Container(
-                                  margin: EdgeInsets.fromLTRB(0, 0, 23.5, 0),
-                                  decoration: BoxDecoration(
-                                    border: Border.all(color: Color(0xFFE27D19)),
-                                    borderRadius: BorderRadius.circular(12),
-                                    color: Color(0xFFFFF5EE),
-                                  ),
+                                child: GestureDetector(
+                                  onTap: () {
+                                    // Ubah warna latar belakang menjadi coklat saat ukuran "M" diklik
+                                    setState(() {
+                                      selectedSize = 'M';
+                                    });
+                                  },
                                   child: Container(
-                                    padding: EdgeInsets.fromLTRB(0, 9, 0.1, 9),
-                                    child: Text(
-                                      'M',
-                                      style: GoogleFonts.getFont(
-                                        'Sora',
-                                        fontWeight: FontWeight.w400,
-                                        fontSize: 14,
-                                        height: 1.6,
-                                        color: Color(0xFFE27D19),
+                                    margin: EdgeInsets.fromLTRB(0, 0, 23.5, 0),
+                                    decoration: BoxDecoration(
+                                      border: Border.all(color: Color(0xFFE27D19)),
+                                      borderRadius: BorderRadius.circular(12),
+                                      color: selectedSize == 'M' ? Color(0xFFFFF5EE) : Color(0xFFFFFFFF),
+                                    ),
+                                    child: Container(
+                                      padding: EdgeInsets.fromLTRB(0, 9, 0.1, 9),
+                                      child: Text(
+                                        'M',
+                                        style: GoogleFonts.getFont(
+                                          'Sora',
+                                          fontWeight: FontWeight.w400,
+                                          fontSize: 14,
+                                          height: 1.6,
+                                          color: selectedSize == 'M' ? Color(0xFFE27D19) : Color(0xFF2F2D2C),
+                                        ),
                                       ),
                                     ),
                                   ),
                                 ),
                               ),
                               Expanded(
-                                child: Container(
-                                  decoration: BoxDecoration(
-                                    border: Border.all(color: Color(0xFFDEDEDE)),
-                                    borderRadius: BorderRadius.circular(12),
-                                    color: Color(0xFFFFFFFF),
-                                  ),
+                                child: GestureDetector(
+                                  onTap: () {
+                                    // Ubah warna latar belakang menjadi coklat saat ukuran "L" diklik
+                                    setState(() {
+                                      selectedSize = 'L';
+                                    });
+                                  },
                                   child: Container(
-                                    padding: EdgeInsets.fromLTRB(0, 9, 0.4, 9),
-                                    child: Text(
-                                      'L',
-                                      style: GoogleFonts.getFont(
-                                        'Sora',
-                                        fontWeight: FontWeight.w400,
-                                        fontSize: 14,
-                                        height: 1.6,
-                                        color: Color(0xFF2F2D2C),
+                                    decoration: BoxDecoration(
+                                      border: Border.all(color: Color(0xFFDEDEDE)),
+                                      borderRadius: BorderRadius.circular(12),
+                                      color: selectedSize == 'L' ? Color(0xFFE27D19) : Color(0xFFFFFFFF),
+                                    ),
+                                    child: Container(
+                                      padding: EdgeInsets.fromLTRB(0, 9, 0.4, 9),
+                                      child: Text(
+                                        'L',
+                                        style: GoogleFonts.getFont(
+                                          'Sora',
+                                          fontWeight: FontWeight.w400,
+                                          fontSize: 14,
+                                          height: 1.6,
+                                          color: selectedSize == 'L' ? Color(0xFFFFFFFF) : Color(0xFF2F2D2C),
+                                        ),
                                       ),
                                     ),
                                   ),
@@ -403,7 +433,7 @@ class Home1 extends StatelessWidget {
                               ),
                             ],
                           ),
-                        ),
+                        ),                        
                       ],
                     ),
                   ),
