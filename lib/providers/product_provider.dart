@@ -1,10 +1,18 @@
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import '../services/product_service.dart';
+import 'package:http/http.dart' as http;
+import 'dart:convert';
+
 import '../models/product.dart';
+import 'http_client_provider.dart';
 
-final productServiceProvider = Provider((ref) => ProductService());
+final productsProvider = FutureProvider<List<Product>>((ref) async {
+  final httpClient = ref.read(httpClientProvider);
+  final response = await httpClient.get(Uri.parse('https://api.example.com/products'));
 
-final productProvider = FutureProvider<List<Product>>((ref) async {
-  final productService = ref.read(productServiceProvider);
-  return productService.fetchProducts();
+  if (response.statusCode == 200) {
+    final List<dynamic> data = json.decode(response.body);
+    return data.map((item) => Product.fromJson(item)).toList();
+  } else {
+    throw Exception('Failed to load products');
+  }
 });
